@@ -32,6 +32,7 @@ use DCarbone\PHPConsulAPI\Event\UserEvent;
 use DCarbone\PHPConsulAPI\Health\HealthCheck;
 use DCarbone\PHPConsulAPI\Health\ServiceEntry;
 use DCarbone\PHPConsulAPI\KV\KVPair;
+use DCarbone\PHPConsulAPI\Semaphore\SemaphoreOptions;
 use DCarbone\PHPConsulAPI\Session\SessionEntry;
 
 /**
@@ -228,5 +229,14 @@ class Hydrator
     public static function SessionEntry(array $data)
     {
         return new SessionEntry($data);
+    }
+
+    /**
+     * @param array $data
+     * @return SemaphoreOptions
+     */
+    public static function Semaphore(array $data)
+    {
+        return new SemaphoreOptions($data);
     }
 }
